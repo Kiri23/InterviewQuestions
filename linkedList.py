@@ -10,7 +10,6 @@ Classes:
    - Methods needed:
      * append(data, add_prev): Add new node to end of list
      * print_forward(): Print list from start to end
-     * print_backward(): Print list from end to start
    - Challenge: Handle cases where some nodes have prev links and others don't
 
 Example usage:
@@ -28,7 +27,7 @@ class Node:
 
 
 class MyLinkedList():
-    def __init__(self, data):
+    def __init__(self, data=None):
         self.first_node = Node(data)
 
     def append(self, data, add_prev=False):
@@ -40,15 +39,17 @@ class MyLinkedList():
             newNode.prev = currentNode
         currentNode.next = newNode
 
+    def print_foward(self):
+        currentNode = self.first_node
+        while currentNode is not None:
+            print(currentNode.data)
+            currentNode = currentNode.next
 
-# implement foward, backward
+
+# implement foward
 node = MyLinkedList(5)
-print(node.first_node.data)
 node.append(8)
-print(node.first_node.next.data)
 node.append(10, True)
-print(node.first_node.next.next.prev.data)
 node.append(11)
 node.append(15)
-print(node.first_node.next.next.next.data)
-print(node.first_node.next.next.next.next.data)
+node.print_foward()
