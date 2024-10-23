@@ -26,11 +26,11 @@ inputIndex = 0  # First parenthesis
 """
 
 str = "Sometimes (when i nest them (my parenthical) too much (like this (and this))) they get confusing"
-str2 = "(a(bc)"
-inputIndex = 0
+str2 = "(a(bc))"
+inputIndex = 10
 parenthensis = [inputIndex]
 
-for i, char in enumerate(str2):
+for i, char in enumerate(str):
     if i > inputIndex:
         print(f"char: {char}, index: {i}")
         if char == ")":
@@ -39,6 +39,7 @@ for i, char in enumerate(str2):
             parenthensis.append(i)
     if len(parenthensis) == 0:
         print(i)
+        break
 
 if len(parenthensis) > 0:
     print(parenthensis)
