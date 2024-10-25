@@ -38,7 +38,7 @@ per = demonstrate_concept(str)
 print(f" # ofpermutation: {len(per)},for string {str} lenght:{len(str)}")
 
 
-# Solution given by interview cake , take out the last character and do the permuations with all the words
+# Solution given by parker from interview cake , take out the last character and do the permuations with all the words
 # execpt the last one
 def get_permutations(string):
     # Base case
